@@ -54,7 +54,7 @@ export class HomePage {
 
 				);
 				this.loginSuccess = true;		
-				this.myDBService.setToken();
+				this.myDBService.setToken(true);
 
 				console.log(this.dbService.getRecentRobots());
 

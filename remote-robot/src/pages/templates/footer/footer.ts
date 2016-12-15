@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
 import { ActionSheetController } from 'ionic-angular';
 
 import { ShareService } from '../../services/ShareService';
 import { DBService } from '../../../providers/db-service';
+
+import { HomePage } from '../../home/home'
 
 @Component({
 	selector: 'footer-component',
@@ -15,7 +18,7 @@ export class FooterComponent {
 	robots: JSON[];
 	buttons: JSON[];
 
-	constructor(private actionSheetCtrl: ActionSheetController, private shareService: ShareService, private dbService: DBService) {}
+	constructor(private navCtrl: NavController, private actionSheetCtrl: ActionSheetController, private shareService: ShareService, private dbService: DBService) {}
 
 	ngOnInit() { 
 		console.log("INIT robots[] FROM DBSERVICE IN FOOTER");
@@ -63,5 +66,10 @@ export class FooterComponent {
     	});
 
     actionSheet.present();
+	}
+
+	logout() {
+		this.dbService.setToken(false);
+		this.navCtrl.setRoot(HomePage);
 	}
 }

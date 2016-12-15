@@ -146,6 +146,10 @@ def getActions():
 def getActions_HTTP():
     return jsonify({'actions':getActions()}), 200
 
+def getPosture():
+    postureProxy = ALProxy("ALRobotPosture", nao_host, nao_port)
+    return postureProxy.getPostureFamily()
+
 
 #DO ACTION
 def doAction(actionName):
@@ -192,7 +196,7 @@ def move_HTTP(x,y,d):
 
 #GET ALL FROM ROBOT
 def getRobot():
-    return jsonify({'ip':getIP(), 'type':getType(), 'name':getName(), 'batteryLevel':getBatteryLevel(), 'chargeStatus':chargeStatus, 'posture':doAction("StandInit"), 'actions':getActions()})
+    return jsonify({'ip':getIP(), 'type':getType(), 'name':getName(), 'batteryLevel':getBatteryLevel(), 'chargeStatus':chargeStatus, 'posture':getPosture(), 'actions':getActions()})
 
 @app.route('/getRobot', methods=['GET'])
 @crossdomain(origin='*')
