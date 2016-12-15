@@ -21114,6 +21114,10 @@ sub {
   }
 }
 
+page-actions ion-content {
+  margin-top: 35px;
+}
+
 page-home roboto img {
   height: 70vh !important;
   width: auto !important;
@@ -21123,4 +21127,12 @@ page-home roboto img {
   -ms-flex-align: center;
   -ms-grid-row-align: center;
   align-items: center;
+}
+
+page-say ion-content {
+  margin-top: 35px;
+}
+
+page-settings ion-content {
+  margin-top: 35px;
 }

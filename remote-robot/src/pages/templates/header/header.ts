@@ -24,4 +24,8 @@ export class HeaderComponent {
 		this.battery = misterRobot.getBatteryLevel();
 		this.charging = misterRobot.getChargeStatus();
 	}
+
+	showName(){
+	
+	}
 }

@@ -7,7 +7,7 @@
 }*/
 
 $(document).ready(function() {
-	$(".circle").hide();
+	$("#main-buttons").hide();
 })
 
 $(".roboto-img").hover(function(){
@@ -18,6 +18,6 @@ $(".roboto-img").hover(function(){
 })
 
 $(".roboto-img").click(function(){
-	$(".circle").slideToggle();
+	$("#main-buttons").toggle();
 })
 ;

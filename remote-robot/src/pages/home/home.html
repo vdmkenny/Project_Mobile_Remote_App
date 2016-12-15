@@ -1,12 +1,12 @@
 <ion-content padding class="has-footer">
-	<h3>Home page</h3>
 	<div *ngIf="!loginSuccess">
 		<form #form="ngForm" (ngSubmit)="loginForm(form)" novalidate>
+			<h1>Enter IP Adress</h1>
 			<ion-item>
 				<ion-label>IP</ion-label>
 				<ion-input type="text" required [(ngModel)]="ip.address" name="address"></ion-input>
 			</ion-item>
-			<button ion-button type="submit">Login</button>
+			<button ion-button color="primary" type="submit" class="login">Login</button>
 		</form>
 	</div>
 
@@ -16,25 +16,22 @@
 			<!-- Robot Center -->
 			<div class="roboto">
 				<div class="center">
-					<div class="circle">
-						<img src="img/circle/c_leftup_full.png">
-						<img src="img/circle/c_rightup_full.png">
-						<br/>
-						<img src="img/circle/c_leftdown_full.png">
-						<img src="img/circle/c_rightdown_full.png">
-					</div>
 					<div class="roboto-img">
-						<img src="{{splashImg}}" height="100px" width="100px"/>
+						<img src="{{splashImg}}"/>
 					</div>
 				</div>
-			</div>
-			<div>
+			</div>			
+			<div id="main-buttons">
 				<!--Buttons to call stuff-->
-				<button ion-button (click)="openActions()">Actions</button>
-				<button ion-button (click)="openSay()">Say</button>
-				<button ion-button (click)="openSettings()">Settings</button>
-				<button ion-button (click)="openManual()">Manual</button>
-			</div>
+				<div>
+					<button ion-button (click)="openActions()"><ion-icon name="walk"></ion-icon></button>
+					<button ion-button (click)="openSay()"><ion-icon name="text"></ion-icon></button>
+				</div>
+				<div>
+					<button ion-button (click)="openManual()"><ion-icon name="book"></ion-icon></button>
+					<button ion-button (click)="openSettings()"><ion-icon name="settings"></ion-icon></button>
+				</div>
+			</div>		
 		</div>
 	</div>
 </ion-content>

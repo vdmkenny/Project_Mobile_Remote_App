@@ -62,7 +62,8 @@ On action select;
 Shows textarea where text to be said by robot can be entered, a 'speak' button and a __back__ button.  
 
 ####Settings view  
-Shows preferences to be saved. No save button, click/select is autosaved to DB and a __back__ button.  
+Shows preferences to be saved. No save button, click/select is autosaved to DB and a __back__ button.
+?color, Token?
 
 ####Manual view  
 Shows tree view of all actions for all types as treeview; opens currently selected as standard and a __back__ button.  
