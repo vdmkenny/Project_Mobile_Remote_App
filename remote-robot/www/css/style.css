@@ -1,4 +1,3 @@
-@import "compass/css3";
 
 /*-------------- Header ------------------*/
 ion-navbar {
@@ -67,6 +66,7 @@ button {
     -webkit-perspective: 1000;
     -webkit-backface-visibility: hidden;
 }
+
 @-webkit-keyframes pulse {
   0% {
     @include transform(scale(.9));
@@ -186,6 +186,19 @@ button {
     align-items: center;
     height: 80vh !important;
     vertical-align: middle;
+}
+
+/*======= ACTIONS ===============*/
+
+.frame {
+    margin-top: 20px;
+    width: 100vh;
+}
+
+.actionButtons button{
+    width: 100%;
+    height: 50px;
+    margin-bottom: -10px;
 }
 
 
