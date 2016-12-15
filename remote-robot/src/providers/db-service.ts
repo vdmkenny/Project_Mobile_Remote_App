@@ -91,7 +91,7 @@ export class DBService {
     // this.getTokenFromDB().subscribe(response => token = response.json()["timestamp"]);
   }
 
-  setToken() {
+  setToken(isValid: Boolean) {
     var d = new Date();
     var t = d.getTime();
 
@@ -101,6 +101,7 @@ export class DBService {
     // };
 
     this.tokenDoc["timestamp"] = t.toString();
+    this.tokenDoc["isValid"] = isValid;
 
     var headers = new Headers({ 'Content-Type': 'application/json' });
     var options = new RequestOptions({headers: headers});
@@ -115,13 +116,13 @@ export class DBService {
     var d = new Date();
     var t = d.getTime();
 
-    var token = Number.parseInt(this.getToken()["timestamp"]);
+    var tokenDoc = this.getToken()
+    var token = Number.parseInt(tokenDoc["timestamp"]);
 
     //7200000 is 2 hours in milseconds
-    if (t - token > 7200000)
-      return false;
-    else
+    if (t - token <= 7200000 && tokenDoc["isValid"])
       return true;
-    
+    else
+      return false;
   }
 }
