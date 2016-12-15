@@ -12,6 +12,8 @@ import { SettingsPage } from '../settings/settings'
 
 import { Robot } from '../../models/robot'
 
+import * as $ from "jquery";
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -64,6 +66,15 @@ export class HomePage {
 			}	
 		});
 	};
+
+	pulse() {
+
+	}
+
+	imgPressed() {
+		$('#main-buttons').toggle()
+	}
+
 
 	
 

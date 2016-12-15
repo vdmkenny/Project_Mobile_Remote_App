@@ -36,6 +36,7 @@ button {
 #main-buttons {
     margin-top: -420px;
     margin-left: 7.7%;
+    display: none;
 }
 
 #main-buttons button {
