@@ -21129,6 +21129,82 @@ page-home roboto img {
   align-items: center;
 }
 
+page-home .scroll-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  background-image: url(../../assets/img/login_background.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+page-home img {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+}
+
+page-home ion-row {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+page-home ion-item {
+  border-radius: 30px !important;
+  padding-left: 10px !important;
+  margin-bottom: 10px;
+  background-color: #f6f6f6;
+  opacity: 1;
+  font-size: 0.9em;
+}
+
+page-home ion-list {
+  margin: 0;
+}
+
+page-home ion-input, page-home ion-textarea {
+  display: block;
+  background-color: transparent;
+  margin-bottom: 5px;
+  margin-left: -10px;
+  margin-top: 5px;
+}
+
+page-home .item-input .label-ios, page-home .item-select .label-ios, page-home .item-datetime .label-ios {
+  color: #7f7f7f;
+  background: transparent;
+}
+
+page-home .item-input .label-md, page-home .item-select .label-md, page-home .item-datetime .label-md {
+  color: #999;
+  background: transparent;
+}
+
+page-home .item-input .label-wp, page-home .item-select .label-wp, page-home .item-datetime .label-wp {
+  color: #999;
+  background: transparent;
+}
+
+page-home .text-input-wp {
+  border: none;
+}
+
+page-home .login-button {
+  width: 100%;
+  border-radius: 30px;
+  font-size: 0.9em;
+  border: 1px solid #fff;
+  background-color: #39acdc;
+}
+
 page-say ion-content {
   margin-top: 35px;
 }
