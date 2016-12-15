@@ -63,6 +63,8 @@ export class HomePage {
 		});
 	};
 
+	
+
 	openActions() {
 		console.log("Actions page button clicked")
 		this.navCtrl.push(ActionsPage);

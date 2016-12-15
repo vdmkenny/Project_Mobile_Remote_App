@@ -15,6 +15,7 @@ ion-col {
     text-align: center;
     font-size: 150%;
 }
+
 /*================= Home =====================*/
 ion-label {
 	background-color: #fff;
@@ -32,15 +33,36 @@ button {
 	margin-left: 20px;
 }
 
+#main-buttons {
+    margin-top: -420px;
+    margin-left: 7.7%;
+}
+
+#main-buttons button {
+    width: 45%;
+    height: 150px;
+    margin-left: auto;
+}
+
+#main-buttons ion-icon {
+    font-size: 50px;
+}
+
 /*-------------- Robot icon ------------------*/
-.roboto-icon {
+.roboto-img {
    /* background-image: url("../img/roboto/nao.png");
     background-size: cover;*/
-    height: 130px;
-    width: 140px;
+    /*height: 130px;
+    width: 150px;*/
+    z-index: 999;
    /* position: relative;
     margin-top: -228px;
     margin-left: 81px;*/
+}
+
+.roboto-img img {
+    height: 110px;
+    width: 120px;
 }
 
 @-webkit-keyframes scaling {
