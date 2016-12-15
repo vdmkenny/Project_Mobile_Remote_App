@@ -67,14 +67,9 @@ export class HomePage {
 		});
 	};
 
-	pulse() {
-
-	}
-
 	imgPressed() {
-		$('#main-buttons').toggle()
+		$('#main-buttons').fadeToggle();
 	}
-
 
 	
 
