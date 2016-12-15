@@ -18,6 +18,15 @@ ion-col {
     font-size: 150%;
 }
 
+/*-------------- Footer ------------------*/
+.ion-log-out {
+    font-size: 30px;
+    float: right;
+}
+.ion-log-out:hover {
+    cursor: pointer;
+}
+
 /*================= Home =====================*/
 ion-label {
 	background-color: #fff;
