@@ -25,31 +25,29 @@
     </ion-row>
 		</form>
   </div>
-
-<div *ngIf="loginSuccess"> 
-	<div *ngIf="shareService.loaded">
-		<header-component></header-component>
-		<!-- Robot Center -->
-		<div class="roboto">
-			<div class="center">
-				<div class="roboto-img">
-					<img src="{{splashImg}}"/>
+	<div *ngIf="loginSuccess"> 
+		<div *ngIf="shareService.loaded">
+			<header-component></header-component>
+			<!-- Robot Center -->
+			<div class="roboto">
+				<div class="center">
+					<div class="roboto-img" (click)="imgPressed()">
+						<img src="{{splashImg}}"/>
+					</div>
+				</div>
+			</div>			
+			<div id="main-buttons">
+				<!--Buttons to call stuff-->
+				<div>
+					<button ion-button (click)="openActions()"><ion-icon name="walk"></ion-icon></button>
+					<button ion-button (click)="openSay()"><ion-icon name="text"></ion-icon></button>
+				</div>
+				<div>
+					<button ion-button (click)="openManual()"><ion-icon name="book"></ion-icon></button>
+					<button ion-button (click)="openSettings()"><ion-icon name="settings"></ion-icon></button>
 				</div>
 			</div>
-		</div>			
-		<div id="main-buttons">
-			<!--Buttons to call stuff-->
-			<div>
-				<button ion-button (click)="openActions()"><ion-icon name="walk"></ion-icon></button>
-				<button ion-button (click)="openSay()"><ion-icon name="text"></ion-icon></button>
-			</div>
-			<div>
-				<button ion-button (click)="openManual()"><ion-icon name="book"></ion-icon></button>
-				<button ion-button (click)="openSettings()"><ion-icon name="settings"></ion-icon></button>
-			</div>
-		</div>		
-	</div>
-</div>
- 
+		</div>					
+	</div> 
 </ion-content>
 <footer-component *ngIf="loginSuccess"></footer-component>

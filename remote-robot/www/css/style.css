@@ -1,3 +1,5 @@
+@import "compass/css3";
+
 /*-------------- Header ------------------*/
 ion-navbar {
     width: 100vh;
@@ -36,6 +38,7 @@ button {
 #main-buttons {
     margin-top: -420px;
     margin-left: 7.7%;
+    display: none;
 }
 
 #main-buttons button {
@@ -60,10 +63,33 @@ button {
     margin-left: 81px;*/
 }
 
+.roboto {
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+}
+@-webkit-keyframes pulse {
+  0% {
+    @include transform(scale(.9));
+  }
+  70% {
+    @include transform(scale(1));
+    box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+  }
+100% {
+    @include transform(scale(.9));
+    box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+  }
+}
 .roboto-img img {
     height: 110px;
     width: 120px;
+    /*width: 100px;
+    height: 100px;*/
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(#5a99d4, .5);
+    -webkit-animation: pulse 1.5s infinite;
 }
+
 
 @-webkit-keyframes scaling {
     from {
@@ -90,7 +116,37 @@ button {
 }
 
 
-/*---------------------------------------------*/
+/*----------- Pulse ----------------------------*/
+
+.container {
+  width: 200px;
+  height: 100%;
+  margin: 0 auto 0;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  background: #fff;
+}
+/*
+.roboto-img {
+  /*position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(#5a99d4, .5);
+  -webkit-animation: pulse 1.5s infinite;
+}*/
+.roboto-img:hover {
+  -webkit-animation: none;
+}
+
+
 
 /*---------- Full -----------------------------*/
 
