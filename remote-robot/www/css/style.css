@@ -10,6 +10,7 @@ ion-navbar div{
 
 .navbar img {
     margin-left: 10px;
+    cursor: pointer;
 }
 
 ion-col {
@@ -201,4 +202,15 @@ button {
     margin-bottom: -10px;
 }
 
+
+/*=========== FOOTER =============*/
+
+ion-toolbar {
+    height: 65px;
+}
+
+ion-footer ion-icon {
+    padding-top: -10px;
+    font-size: 30px;
+}
 
