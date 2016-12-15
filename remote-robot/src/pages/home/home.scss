@@ -8,4 +8,79 @@ page-home {
 			align-items: center;
 		}
 	}
+
+	.scroll-content {
+      // background-color: #42c7ff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background-image: url(../../assets/img/login_background.jpg);
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+    }
+ 
+    img {
+      width: 50%;
+      height: auto;
+      margin: 0 auto;
+    }
+ 
+    // #cloud-layer {
+    //   background-image: url(../../assets/img/login_background_overlay_red.png);
+    //   background-size: cover;
+    //   width: 100%;
+    //   height: 100%;
+    // }
+ 
+      ion-row {
+        align-items: center;
+        text-align: center;
+      }
+ 
+      ion-item {
+          border-radius: 30px !important;
+          padding-left: 10px !important;
+          margin-bottom: 10px;
+          background-color: #f6f6f6;
+          opacity: 1;
+          font-size: 0.9em;
+      }
+ 
+      ion-list {
+          margin: 0;
+      }
+
+      ion-input, ion-textarea {
+        display: block;
+        background-color: transparent;
+        margin-bottom: 5px;
+        margin-left: -10px;
+        margin-top: 5px;
+      }
+
+      .item-input .label-ios, .item-select .label-ios, .item-datetime .label-ios {
+        color: #7f7f7f;
+        background: transparent;
+      }
+      .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+        color: #999;
+        background: transparent;
+      }
+      .item-input .label-wp, .item-select .label-wp, .item-datetime .label-wp {
+        color: #999;
+        background: transparent;
+      }
+
+      .text-input-wp {
+        border: none;
+      }
+ 
+      .login-button {
+          width: 100%;
+          border-radius: 30px;
+          font-size: 0.9em;
+          border: 1px solid #fff;
+          background-color: #39acdc;
+      }
 }

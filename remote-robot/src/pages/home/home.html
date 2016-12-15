@@ -1,38 +1,55 @@
 <ion-content padding class="has-footer">
-	<div *ngIf="!loginSuccess">
+ 
+  <div *ngIf="!loginSuccess" padding [@flyInBottomFast]="cloudState" id="cloud-layer">
 		<form #form="ngForm" (ngSubmit)="loginForm(form)" novalidate>
-			<h1>Enter IP Adress</h1>
-			<ion-item>
-				<ion-label>IP</ion-label>
-				<ion-input type="text" required [(ngModel)]="ip.address" name="address"></ion-input>
-			</ion-item>
-			<button ion-button color="primary" type="submit" class="login">Login</button>
+    <ion-row>
+      <ion-col>
+        <img [@flyInBottomSlow]="logoState" src="../../assets/img/pepper.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list inset [@bounceInBottom]="formState">
+		  
+            <ion-item>
+              <ion-label>IP Address</ion-label>
+              <ion-input type="text" required [(ngModel)]="ip.address" name="address"></ion-input>
+            </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button class="login-button" type="submit" [@fadeIn]="loginState">Login</button>
+      </ion-col>
+    </ion-row>
 		</form>
-	</div>
+  </div>
 
-	<div *ngIf="loginSuccess"> 
-		<div *ngIf="shareService.loaded">
-			<header-component></header-component>
-			<!-- Robot Center -->
-			<div class="roboto">
-				<div class="center">
-					<div class="roboto-img">
-						<img src="{{splashImg}}"/>
-					</div>
+<div *ngIf="loginSuccess"> 
+	<div *ngIf="shareService.loaded">
+		<header-component></header-component>
+		<!-- Robot Center -->
+		<div class="roboto">
+			<div class="center">
+				<div class="roboto-img">
+					<img src="{{splashImg}}"/>
 				</div>
-			</div>			
-			<div id="main-buttons">
-				<!--Buttons to call stuff-->
-				<div>
-					<button ion-button (click)="openActions()"><ion-icon name="walk"></ion-icon></button>
-					<button ion-button (click)="openSay()"><ion-icon name="text"></ion-icon></button>
-				</div>
-				<div>
-					<button ion-button (click)="openManual()"><ion-icon name="book"></ion-icon></button>
-					<button ion-button (click)="openSettings()"><ion-icon name="settings"></ion-icon></button>
-				</div>
-			</div>		
-		</div>
+			</div>
+		</div>			
+		<div id="main-buttons">
+			<!--Buttons to call stuff-->
+			<div>
+				<button ion-button (click)="openActions()"><ion-icon name="walk"></ion-icon></button>
+				<button ion-button (click)="openSay()"><ion-icon name="text"></ion-icon></button>
+			</div>
+			<div>
+				<button ion-button (click)="openManual()"><ion-icon name="book"></ion-icon></button>
+				<button ion-button (click)="openSettings()"><ion-icon name="settings"></ion-icon></button>
+			</div>
+		</div>		
 	</div>
+</div>
+ 
 </ion-content>
-<footer-component></footer-component>
+<footer-component *ngIf="loginSuccess"></footer-component>
