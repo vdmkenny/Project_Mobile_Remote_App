@@ -28,7 +28,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, private myShareService: ShareService, private myRobotService: RobotService, private myDBService: DBService) {
 		this.robotService = myRobotService;
 		this.dbService = myDBService;
-		this.shareService = myShareService;
+		this.shareService = myShareService;		
 	}
 
 	loginForm(form) {
@@ -53,8 +53,10 @@ export class HomePage {
 					}
 
 				);
-				this.loginSuccess = true;
+				this.loginSuccess = true;		
+				this.myDBService.setToken();
 
+				console.log(this.dbService.getRecentRobots());
 
 			} else {
 				console.log("FALSE RESPONSE STATUS");
@@ -81,20 +83,4 @@ export class HomePage {
 	openManual() {
 		this.navCtrl.push(ManualPage);
 	}
-
-
-		/*drawCircle() {
-		var c = <HTMLCanvasElement>document.getElementById("canvas");
-		var ctx = c.getContext("2d");
-		ctx.beginPath();
-		ctx.arc(150, 150, 300, 0, 0.5 * Math.PI);
-		ctx.moveTo(150, 150);
-		ctx.lineTo(300, 150);
-		ctx.moveTo(150, 150);
-		ctx.lineTo(150, 300);
-		ctx.lineTo(300, 150);
-		ctx.stroke();
-		ctx.fillStyle = 'rgb(0, 78, 104, 0.5)';
-		ctx.fill();
-	};	*/
 }

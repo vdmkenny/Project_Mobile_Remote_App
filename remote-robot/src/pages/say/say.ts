@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, ActionSheetController, ToastController, Platform, LoadingController, Loading } from 'ionic-angular';
-import { Toast, Camera, File, Transfer} from 'ionic-native';
+import { NavController, ToastController } from 'ionic-angular';
+import { Camera } from 'ionic-native';
 
 import { RobotService } from '../../providers/robot-service';
 import { ShareService } from '../services/ShareService';
+import { DBService } from '../../providers/db-service';
+
+import { HomePage } from '../home/home'
 
 @Component({
   selector: 'page-say',
@@ -18,7 +21,11 @@ export class SayPage {
 
   public base64Image: string;
 
-  constructor(public navCtrl: NavController, private myShareService: ShareService, private myRobotService: RobotService, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, private myShareService: ShareService, private myRobotService: RobotService, public toastCtrl: ToastController, private myDBService: DBService) {
+    if (!myDBService.isTokenValid()) {
+      navCtrl.setRoot(HomePage);
+    }
+
     this.robotService = myRobotService;
     this.shareService = myShareService;
     this.responses = new Array();
