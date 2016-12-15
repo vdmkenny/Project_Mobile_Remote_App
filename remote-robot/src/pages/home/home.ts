@@ -28,7 +28,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, private myShareService: ShareService, private myRobotService: RobotService, private myDBService: DBService) {
 		this.robotService = myRobotService;
 		this.dbService = myDBService;
-		this.shareService = myShareService;
+		this.shareService = myShareService;		
 	}
 
 	loginForm(form) {
@@ -53,7 +53,8 @@ export class HomePage {
 					}
 
 				);
-				this.loginSuccess = true;
+				this.loginSuccess = true;		
+				this.myDBService.setToken();
 
 				console.log(this.dbService.getRecentRobots());
 

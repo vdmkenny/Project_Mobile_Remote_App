@@ -8,10 +8,12 @@ export class DBService {
   doc: string;
   robots: JSON[];
   list: String[];
+  tokenDoc: string;
 
   constructor(public http: Http) {
     this.robots = [];
     this.getFromDB().subscribe(response => this.doc = response);
+    this.getTokenFromDB().subscribe(response => this.tokenDoc = response);
   }
 
   //-------------------------------------------------
@@ -74,5 +76,52 @@ export class DBService {
       console.log("IP ALREADY PRESENT IN DOC");
   }
 
+  
+  //-------------------------------------------------
+  //TOKEN
+  //-------------------------------------------------
 
+  getTokenFromDB() {
+    return this.http.get(`${this.dbUrl}/token`).map(res => res.json());
+  }
+
+  getToken() {
+    this.getTokenFromDB().subscribe(response => this.tokenDoc = response);
+    return this.tokenDoc;
+    // this.getTokenFromDB().subscribe(response => token = response.json()["timestamp"]);
+  }
+
+  setToken() {
+    var d = new Date();
+    var t = d.getTime();
+
+    // var token = {
+    //   "_id": "token",
+    //   "timestamp": t.toString()
+    // };
+
+    this.tokenDoc["timestamp"] = t.toString();
+
+    var headers = new Headers({ 'Content-Type': 'application/json' });
+    var options = new RequestOptions({headers: headers});
+
+    console.log(this.tokenDoc);
+
+    this.http.put(`${this.dbUrl}/token`, this.tokenDoc, options)
+        .subscribe(response => console.log(response));
+  }
+
+  isTokenValid() {
+    var d = new Date();
+    var t = d.getTime();
+
+    var token = Number.parseInt(this.getToken()["timestamp"]);
+
+    //7200000 is 2 hours in milseconds
+    if (t - token > 7200000)
+      return false;
+    else
+      return true;
+    
+  }
 }

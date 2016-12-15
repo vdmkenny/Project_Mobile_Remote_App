@@ -3,6 +3,9 @@ import { NavController } from 'ionic-angular';
 
 import { RobotService } from '../../providers/robot-service';
 import { ShareService } from '../services/ShareService';
+import { DBService } from '../../providers/db-service';
+
+import { HomePage } from '../home/home'
 
 @Component({
   selector: 'page-actions',
@@ -13,7 +16,11 @@ export class ActionsPage {
   robotService: RobotService;
   shareService: ShareService;
 
-  constructor(public navCtrl: NavController, private myShareService: ShareService, private myRobotService: RobotService) {
+  constructor(public navCtrl: NavController, private myShareService: ShareService, private myRobotService: RobotService, private myDBService: DBService) {
+    if (!myDBService.isTokenValid()) {
+      navCtrl.setRoot(HomePage);
+    }
+
     this.robotService = myRobotService;
     this.shareService = myShareService;
   }
