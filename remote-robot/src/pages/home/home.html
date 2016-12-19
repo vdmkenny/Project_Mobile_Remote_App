@@ -37,13 +37,22 @@
 			</div>			
 			<div id="main-buttons">
 				<!--Buttons to call stuff-->
-				<div>
-					<button ion-button (click)="openActions()"><ion-icon name="walk"></ion-icon></button>
-					<button ion-button (click)="openSay()"><ion-icon name="text"></ion-icon></button>
+				<!--We dont use these ionic 2 ionicons because it displayed random icons-->
+				<!--<div>
+					<button ion-button (click)="openActions()"><ion-icon name="md-walk"></ion-icon></button>
+					<button ion-button (click)="openSay()"> <ion-icon name="md-text"></ion-icon></button>
 				</div>
 				<div>
-					<button ion-button (click)="openManual()"><ion-icon name="book"></ion-icon></button>
-					<button ion-button (click)="openSettings()"><ion-icon name="settings"></ion-icon></button>
+					<button ion-button (click)="openManual()"><ion-icon name="md-book"></ion-icon></button>
+					<button ion-button (click)="openSettings()"><ion-icon name="md-settings"></ion-icon></button>
+				</div>-->
+				<div>
+					<button ion-button (click)="openActions()"><i class="icon ion-android-walk"></i></button>
+					<button ion-button (click)="openSay()"><i class="icon ion-android-chat"></i></button>
+				</div>
+				<div>
+					<button ion-button (click)="openManual()"><i class="icon ion-ios-book"></i> </button>
+					<button ion-button (click)="openSettings()"><i class="icon ion-android-settings"></i></button>
 				</div>
 			</div>
 		</div>					

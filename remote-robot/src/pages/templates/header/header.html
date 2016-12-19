@@ -8,10 +8,13 @@
 				<ion-col>{{battery}}%
 					<div style="display: inline-block" id="charger">
 						<div *ngIf="charging">
-					  		<ion-icon name="battery-charging"></ion-icon>
-						</div>		
+					  		<!--<ion-icon ios="ios-battery-charging" md="md-battery-charging"></ion-icon>-->
+							<!--<ion-icon name="md-battery-charging"></ion-icon>-->
+							<i class="ion-battery-charging"></i>
+						</div>
 						<div *ngIf="!charging">
-					  		<ion-icon name="battery-dead"></ion-icon>
+					  		<!--<ion-icon name="md-battery-dead"></ion-icon>-->						  
+							<i class="ion-battery-empty"></i>
 						</div>
 					</div>
 				</ion-col>
